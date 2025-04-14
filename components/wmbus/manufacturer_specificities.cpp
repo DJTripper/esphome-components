@@ -262,6 +262,9 @@ void initializeDiehlDefaultKeySupport(const vector<uchar>& confidentiality_key, 
 {
     keys.push_back(0xb71f0ae8);
     debug("(mfct) confKey %x", confidentiality_key[0]);
+    debug("(mfct) confKey %x", confidentiality_key[1]);
+    debug("(mfct) confKey %x", confidentiality_key[2]);
+    debug("(mfct) confKey %x", confidentiality_key[3]);
 //     if (!confidentiality_key.empty())
 //         keys.push_back(convertKey(confidentiality_key));
 //
