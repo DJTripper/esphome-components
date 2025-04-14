@@ -156,6 +156,7 @@ bool registerDriver(function<void(DriverInfo&)> setup)
     DriverInfo di;
     setup(di);
 
+    debug("register %s", di.name().str());
     // Check that the driver name has not been registered before!
     assert(lookupDriver(di.name().str()) == NULL);
 
