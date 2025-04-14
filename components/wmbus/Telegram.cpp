@@ -2141,6 +2141,7 @@ void Telegram::preProcess()
 
 bool Telegram::parse(vector<uchar>& input_frame, MeterKeys* mk, bool warn)
 {
+    debug("telegram parse");
     switch (about.type)
     {
     case FrameType::WMBUS: return parseWMBUS(input_frame, mk, warn);
@@ -2205,6 +2206,8 @@ bool Telegram::parseWMBUSHeader(vector<uchar>& input_frame)
 
 bool Telegram::parseWMBUS(vector<uchar>& input_frame, MeterKeys* mk, bool warn)
 {
+    debug("telegram parseWMBUS");
+
     assert(about.type == FrameType::WMBUS);
 
     parser_warns_ = warn;
