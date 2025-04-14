@@ -260,23 +260,23 @@ void addDefaultManufacturerKeyIfAny(const vector<uchar>& frame, TPLSecurityMode 
 // Diehl: initialize support of default keys in a meter
 void initializeDiehlDefaultKeySupport(const vector<uchar>& confidentiality_key, vector<uint32_t>& keys)
 {
-    keys.push_back(0xb71f0ae8);
-    debug("(mfct) confKey_ %x", 0xb71f0ae8);
-    debug("(mfct) confKey_ %x", convertKey(confidentiality_key));
-    debug("(mfct) confKey_ %x", confidentiality_key);
-    debug("(mfct) confKey %x", confidentiality_key[0]);
-    debug("(mfct) confKey %x", confidentiality_key[1]);
-    debug("(mfct) confKey %x", confidentiality_key[2]);
-    debug("(mfct) confKey %x", confidentiality_key[3]);
-//     if (!confidentiality_key.empty())
-//         keys.push_back(convertKey(confidentiality_key));
-//
-//     // fallback to default keys if no custom key provided
-//     if (keys.empty())
-//     {
-//         keys.push_back(convertKey(PRIOS_DEFAULT_KEY1));
-//         keys.push_back(convertKey(PRIOS_DEFAULT_KEY2));
-//     }
+//     keys.push_back(0xb71f0ae8);
+//     debug("(mfct) confKey_ %x", 0xb71f0ae8);
+//     debug("(mfct) confKey_ %x", convertKey(confidentiality_key));
+//     debug("(mfct) confKey_ %x", confidentiality_key);
+//     debug("(mfct) confKey %x", confidentiality_key[0]);
+//     debug("(mfct) confKey %x", confidentiality_key[1]);
+//     debug("(mfct) confKey %x", confidentiality_key[2]);
+//     debug("(mfct) confKey %x", confidentiality_key[3]);
+    if (!confidentiality_key.empty())
+        keys.push_back(convertKey(confidentiality_key));
+
+    // fallback to default keys if no custom key provided
+    if (keys.empty())
+    {
+        keys.push_back(convertKey(PRIOS_DEFAULT_KEY1));
+        keys.push_back(convertKey(PRIOS_DEFAULT_KEY2));
+    }
 }
 
 // Diehl: Is payload real data crypted (LFSR)?
