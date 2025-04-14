@@ -137,10 +137,12 @@ namespace wmbus {
               ESP_LOGVV(TAG, "key %x", sensor->myKey);
               ESP_LOGVV(TAG, "keyraw %s", (sensor->oldKey).c_str());
               mi.parse("ESPHome", used_driver, t.addresses[0].id + ",", sensor->myKey);
+              ESP_LOGVV(TAG, "AFTER PARSE");
               auto meter = createMeter(&mi);
               std::vector<Address> addresses;
               AboutTelegram about{"ESPHome wM-Bus", mbus_data.rssi, FrameType::WMBUS, this->frame_timestamp_};
               meter->handleTelegram(about, mbus_data.frame, false, &addresses, &id_match, &t);
+              ESP_LOGVV(TAG, "AFTER HANDLE");
               if (id_match) {
                 for (auto const& field : sensor->fields) {
                   std::string field_name = field.first.first;
