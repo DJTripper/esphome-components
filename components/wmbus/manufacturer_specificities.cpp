@@ -169,7 +169,7 @@ vector<uchar> decodeDiehlLfsr(const vector<uchar>& origin, const vector<uchar>& 
     std::stringstream stream;
     stream << std::hex << key;
 
-    debug("(diehl) preprocess necessary %s", stream.str());
+    debug("(diehl) key %s", stream.str());
     // modify seed key with header values
     key ^= uint32FromBytes(origin, 2); // manufacturer + address[0-1]
     key ^= uint32FromBytes(origin, 6); // address[2-3] + version + type
