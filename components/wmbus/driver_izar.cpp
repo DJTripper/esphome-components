@@ -81,6 +81,8 @@ namespace
 
     Driver::Driver(MeterInfo &mi, DriverInfo &di) : MeterCommonImplementation(mi, di)
     {
+        debug("(izar) construct");
+
         initializeDiehlDefaultKeySupport(meterKeys()->confidentiality_key, keys);
 
         addStringField("prefix",
