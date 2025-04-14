@@ -107,6 +107,7 @@ namespace wmbus {
                     mbus_data.block);
 
           if (meter_in_config) {
+            ESP_LOGVV(TAG, "Meter in Config");
             bool supported_link_mode{false};
             if (used_drv_info.linkModes().empty()) {
               supported_link_mode = true;
@@ -129,6 +130,7 @@ namespace wmbus {
             else {
               auto *sensor = this->wmbus_listeners_[meter_id];
               
+              ESP_LOGVV(TAG, "IN other else");
               bool id_match;
               MeterInfo mi;
               mi.parse("ESPHome", used_driver, t.addresses[0].id + ",", sensor->myKey);

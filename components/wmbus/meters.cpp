@@ -1982,7 +1982,7 @@ shared_ptr<Meter> createMeter(MeterInfo* mi)
             newm->setSelectedFields(di->defaultFields());
         }
         string aesc = AddressExpression::concat(mi->address_expressions);
-        verbose("(meter) created %s %s %s %s",
+        debug("(meter) created %s %s %s %s",
                 mi->name.c_str(),
                 di->name().str().c_str(),
                 aesc.c_str(),
