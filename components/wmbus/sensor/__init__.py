@@ -65,6 +65,7 @@ CONFIG_SCHEMA = cv.Schema(
 
 async def to_code(config):
     if config[CONF_TYPE]:
+        print(color(Fore.RED, f"Adding +<**/wmbus/driver_{config[CONF_TYPE].lower()}.cpp>!"))
         cg.add_platformio_option("build_src_filter", [f"+<**/wmbus/driver_{config[CONF_TYPE].lower()}.cpp>"])
     if config[CONF_METER_ID]:
         wmbus = await cg.get_variable(config[CONF_WMBUS_ID])
