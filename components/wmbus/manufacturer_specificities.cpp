@@ -261,7 +261,8 @@ void addDefaultManufacturerKeyIfAny(const vector<uchar>& frame, TPLSecurityMode 
 void initializeDiehlDefaultKeySupport(const vector<uchar>& confidentiality_key, vector<uint32_t>& keys)
 {
     keys.push_back(0xb71f0ae8);
-    debug("(mfct) confKey_ %x", convertKey(confidentiality_key), 0);
+    debug("(mfct) confKey_ %x", 0xb71f0ae8);
+    debug("(mfct) confKey_ %x", convertKey(confidentiality_key));
     debug("(mfct) confKey_ %x", confidentiality_key);
     debug("(mfct) confKey %x", confidentiality_key[0]);
     debug("(mfct) confKey %x", confidentiality_key[1]);
