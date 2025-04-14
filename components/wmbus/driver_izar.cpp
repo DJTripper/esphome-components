@@ -192,7 +192,7 @@ namespace
 
         vector<uchar> decoded_content;
         for (auto& key : keys) {
-            debug("(izar) key: %s", bin2hex(key).c_str());
+            debug("(izar) key: %d", key);
             decoded_content = decodePrios(origin, frame, key);
             if (!decoded_content.empty())
                 break;
