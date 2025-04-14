@@ -139,6 +139,7 @@ namespace wmbus {
               mi.parse("ESPHome", used_driver, t.addresses[0].id + ",", sensor->myKey);
               ESP_LOGVV(TAG, "AFTER PARSE");
               auto meter = createMeter(&mi);
+              ESP_LOGVV(TAG, "AFTER METER CREATE");
               std::vector<Address> addresses;
               AboutTelegram about{"ESPHome wM-Bus", mbus_data.rssi, FrameType::WMBUS, this->frame_timestamp_};
               meter->handleTelegram(about, mbus_data.frame, false, &addresses, &id_match, &t);
