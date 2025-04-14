@@ -73,6 +73,7 @@ namespace wmbus {
         bool meter_in_config = (this->wmbus_listeners_.count(meter_id) == 1) ? true : false;
         
         if (this->log_all_ || meter_in_config) { //No need to do sth if logging is disabled and meter is not configured
+          ESP_LOGVV(TAG, "LOG!");
 
           auto detected_drv_info      = pickMeterDriver(&t);
           std::string detected_driver = (detected_drv_info.name().str().empty() ? "" : detected_drv_info.name().str().c_str());
