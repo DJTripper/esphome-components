@@ -68,7 +68,7 @@ async def to_code(config):
         cg.add_platformio_option("build_src_filter", [f"+<**/wmbus/driver_{config[CONF_TYPE].lower()}.cpp>"])
     if config[CONF_METER_ID]:
         wmbus = await cg.get_variable(config[CONF_WMBUS_ID])
-        print(color(Fore.RED, f"KEY '{s[config[CONF_NAME]]}'!"))
+        print(color(Fore.RED, f"KEY '{config[CONF_NAME]}'!"))
         cg.add(wmbus.register_wmbus_listener(config[CONF_METER_ID], config[CONF_TYPE].lower(), config[CONF_KEY]))
         for s in config.get(CONF_SENSORS, []):
             if CONF_UNIT_OF_MEASUREMENT not in s:
