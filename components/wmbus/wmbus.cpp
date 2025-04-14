@@ -214,6 +214,8 @@ namespace wmbus {
   }
 
   void WMBusComponent::register_wmbus_listener(const uint32_t meter_id, const std::string type, const std::string key) {
+    ESP_LOGVV(TAG, "Reg key %s", key);
+
     if (this->wmbus_listeners_.count(meter_id) == 0) {
       WMBusListener *listener = new wmbus::WMBusListener(meter_id, type, key);
       this->wmbus_listeners_.insert({meter_id, listener});
