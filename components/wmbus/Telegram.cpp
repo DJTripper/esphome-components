@@ -3173,7 +3173,7 @@ bool Telegram::findFormatBytesFromKnownMeterSignatures(vector<uchar>* format_byt
 
 bool handleTelegram(AboutTelegram& about, vector<uchar> frame)
 {
-    verbose("(wmbus) incide wmbus.cc");
+    debug("(wmbus) incide wmbus.cc");
     bool handled = false;
 
     assert(frame.size() > 0);

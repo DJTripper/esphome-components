@@ -906,7 +906,7 @@ bool MeterCommonImplementation::handleTelegram(AboutTelegram &about, vector<ucha
     }
 
     *id_match = true;
-    verbose("(meter) %s(%d) %s  handling telegram from %s",
+    debug("(meter) %s(%d) %s  handling telegram from %s",
             name().c_str(),
             index(),
             driverName().str().c_str(),
