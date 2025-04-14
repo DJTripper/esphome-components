@@ -166,10 +166,7 @@ void transformDiehlAddress(vector<uchar>& frame, DiehlAddressTransformMethod tra
 // Diehl: decode LFSR encrypted data used in Izar/PRIOS and Sharky meters
 vector<uchar> decodeDiehlLfsr(const vector<uchar>& origin, const vector<uchar>& frame, uint32_t key, DiehlLfsrCheckMethod check_method, uint32_t check_value)
 {
-    std::stringstream stream;
-    stream << std::hex << key;
-
-    debug("(diehl) key %s", stream.str());
+    debug("(diehl) key %s", key);
     // modify seed key with header values
     key ^= uint32FromBytes(origin, 2); // manufacturer + address[0-1]
     key ^= uint32FromBytes(origin, 6); // address[2-3] + version + type
