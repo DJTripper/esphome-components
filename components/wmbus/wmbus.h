@@ -73,6 +73,7 @@ namespace wmbus {
       uint32_t id;
       std::string type;
       std::string myKey;
+      std::string oldKey;
       std::vector<unsigned char> key{};
       std::map<std::pair<std::string, std::string>, sensor::Sensor *> fields{};
       void add_sensor(std::string field, std::string unit, sensor::Sensor *sensor) {

@@ -135,7 +135,7 @@ namespace wmbus {
               bool id_match;
               MeterInfo mi;
               ESP_LOGVV(TAG, "key %x", sensor->myKey);
-              ESP_LOGVV(TAG, "keyraw %x", sensor->key);
+              ESP_LOGVV(TAG, "keyraw %s", sensor->oldKey);
               mi.parse("ESPHome", used_driver, t.addresses[0].id + ",", sensor->myKey);
               auto meter = createMeter(&mi);
               std::vector<Address> addresses;
@@ -487,6 +487,7 @@ namespace wmbus {
     this->id = id;
     this->type = type;
     this->myKey = key;
+    this->oldKey;
     ESP_LOGVV(TAG, "key2 %s", this->myKey);
     hex_to_bin(key, &(this->key));
     ESP_LOGVV(TAG, "key3 %s", this->myKey);
