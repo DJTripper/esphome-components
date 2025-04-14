@@ -189,7 +189,6 @@ namespace
         vector<uchar> frame;
         t->extractFrame(&frame);
         vector<uchar> origin = t->original.empty() ? frame : t->original;
-        debug("(izar) i am here");
 
         vector<uchar> decoded_content;
         for (auto& key : keys) {
