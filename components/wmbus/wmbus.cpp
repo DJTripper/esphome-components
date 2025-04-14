@@ -487,7 +487,7 @@ namespace wmbus {
     this->id = id;
     this->type = type;
     this->myKey = key;
-    this->oldKey;
+    this->oldKey = key;
     ESP_LOGVV(TAG, "key2 %s", this->myKey);
     hex_to_bin(key, &(this->key));
     ESP_LOGVV(TAG, "key3 %s", this->myKey);
