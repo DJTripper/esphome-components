@@ -198,6 +198,7 @@ namespace wmbus {
             }
           }
           else {
+            ESP_LOGVV(TAG, "NOT IN CONFIG");
             // meter not in config
           }
         }
